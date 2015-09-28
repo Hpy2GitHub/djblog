@@ -1,0 +1,52 @@
+mkdir djangogirls
+cd djangogirls
+python3 -m venv myvenv
+myvenv\Scripts\activate
+pip install django==1.8
+django-admin startproject mysite .
+notepad++ mysite\settings.py
+# change timezone and add line at end for static content
+python manage.py migrate
+python manage.py runserver
+# browse to http://127.0.0.1:8000/
+# <control-c>
+python manage.py startapp blog
+notepad++ mysite\settings.py
+# add blog to installed apps
+notepad++ blog\models.py
+# cut and paste content from the tutorial page
+python manage.py makemigrations blog
+notepad++ blog\admin.py
+# cut and paste content from the tutorial
+python manage.py runserver
+# browse to http://127.0.0.1:8000/admin/
+# get login form
+# <control-c>
+python manage.py createsuperuser
+# username: beta
+# password: beta
+python manage.py runserver
+# browse to http://127.0.0.1:8000/admin/
+# login
+# try to enter a post
+# got no such table: blog_post
+# database djangogirls directory does not contain blog
+# there's only 1 db.sqlite3
+# I tried re-running python manage.py makemigrations blog but I got "no changes"
+# so the database doesn't have Post but the code must because it displayed an entry form
+# from looking at a book, I think this step is missing
+python manage.py migrate 0001_initial.py
+# which gave me an error that 0001_initial.py does not have migrations
+# ... (you cannot selectively sync unmigrated apps)
+python manage.py migrate # seemed to work
+python manage.py runserver
+# that was the  missing step
+git init
+git config --global user.name "Beta Beta"
+git config --global user.email beta@beta.com
+notepad++ .gitignore
+# copy and paste text from tutorial
+git status
+
+
+
