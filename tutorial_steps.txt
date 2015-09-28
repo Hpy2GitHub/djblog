@@ -47,6 +47,55 @@ git config --global user.email beta@beta.com
 notepad++ .gitignore
 # copy and paste text from tutorial
 git status
+git add -A .
+git commit -m "Django Girls app, 1st commit"
+# login to github
+# create a new repo
+# https://github.com/Hpy2GitHub/djblog.git
+git remote add origin  https://github.com/Hpy2GitHub/djblog.git
+git push -u origin master
+# navigate to python anywhere
+# signup
+# click link in confirmation email
+# clicked on bash console
+git clone https://github.com/Hpy2GitHub/djblog.git
+tree djblog
+virtualenv --python=python3.4 myvenv
+source myvenv/bin/activate
+pip install django whitenoise
+python manage.py collectstatic
+python manage.py migrate
+python manage.py createsuperuser
+# admin
+# newaxisu@yahoo.com
+# S1000000w
+# click pythonanywhere log
+# click add a new web app button
+# note BCZwnt.pythonanywhere.com.
+#click next
+# manual configuration
+# python 3.4
+/home/BCZwnt/djblog/myvenv
+# copy and paste wsgi file
+# click dashboard
+# click green reload button
+# navigate to http://bczwnt.pythonanywhere.com
+# got error - unhandled exception
 
 
+
+
+notepad++ mysite\urls.py
+notepad++ blog\urls.py
+notepad++ blog\views.py
+mkdir blog\templates\blog
+notepad++ blog\templates\blog\post_list.html
+python manage.py runserver
+# navigate to http://127.0.0.1:8000
+# <control-c>
+notepad++ blog\templates\blog\post_list.html
+python manage.py runserver
+# navigate to http://127.0.0.1:8000
+# <control-c>
+python manage.py shell
 
